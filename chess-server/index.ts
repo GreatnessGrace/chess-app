@@ -2,15 +2,16 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 import cookieParser from 'cookie-parser'; 
-
 import { appLoader } from "./src/loaders";
 import { databaseLoader } from "./src/loaders";
 import { router } from './src/routers';
 
+
+
 process.on('uncaughtException', err => {
     console.log('UNCAUGHT EXCEPTION');
     console.log(`[Inside 'uncaughtException' event] ${ err.stack ?? err.message }`);
-})
+});
 
 process.on("unhandledRejection",
   (reason, promise) => {
