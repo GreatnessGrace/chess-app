@@ -1,17 +1,20 @@
-import { useState } from 'react'
 import './App.css'
-// import Chessboard from './components/Game/Chessboard';
-import { Chessboard } from "react-chessboard";
+// import { Chessboard } from "react-chessboard";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Landing } from './screens/Landing';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <h1>Chess APP</h1>
-    <Chessboard id="BasicBoard" />
-
-    {/* <Chessboard></Chessboard> */}
+    {/* <Chessboard id="BasicBoard" /> */}
+    <div className='h-screen bg-slate-950'>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Landing/>}/>
+        </Routes>
+        </BrowserRouter>
+    </div>
     </>
   )
 }
